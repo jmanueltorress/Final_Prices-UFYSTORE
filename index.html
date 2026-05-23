@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Precios Playeras Personalizadas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <header>
+    <h1>Precios Playeras Personalizadas</h1>
+    <p>Calcula tus precios de venta con impresión DTF incluida</p>
+  </header>
+
+  <!-- CONTROLES -->
+  <div class="controls-panel">
+
+    <span class="panel-title">
+      Parámetros de cálculo
+    </span>
+
+    <!-- DTF -->
+    <div class="ctrl">
+
+      <div class="ctrl-header">
+        <label>Costo DTF (imagen 28x50 cm)</label>
+
+        <span class="value" id="dtfLabel">
+          $60 MXN
+        </span>
+      </div>
+
+      <input
+        type="range"
+        id="dtfCost"
+        min="40"
+        max="100"
+        value="60"
+        step="5"
+      >
+
+    </div>
+
+    <!-- MARGEN -->
+    <div class="ctrl">
+
+      <div class="ctrl-header">
+        <label>Margen de ganancia deseado</label>
+
+        <span class="value" id="marginLabel">
+          50%
+        </span>
+      </div>
+
+      <input
+        type="range"
+        id="marginPct"
+        min="30"
+        max="80"
+        value="50"
+        step="5"
+      >
+
+    </div>
+
+  </div>
+
+  <!-- NOTA -->
+  <div class="nota">
+
+    Los costos de fábrica son precios mayoreo Euro Cotton.
+    El precio de venta se redondea al múltiplo de 10 terminado
+    en 9 más cercano para facilitar la percepción del cliente.
+
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+
+    <button
+      class="tab active"
+      onclick="showTab('basicas', this)"
+    >
+      Básicas
+    </button>
+
+    <button
+      class="tab"
+      onclick="showTab('premium', this)"
+    >
+      Premium
+    </button>
+
+    <button
+      class="tab"
+      onclick="showTab('otros', this)"
+    >
+      Sudaderas y Polos
+    </button>
+
+    <button
+      class="tab"
+      onclick="showTab('gorras', this)"
+    >
+      Gorras
+    </button>
+
+    <button
+      class="tab"
+      onclick="showTab('estrategia', this)"
+    >
+      Estrategia
+    </button>
+
+  </div>
+
+  <!-- BASICAS -->
+  <div class="section active" id="basicas">
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Costo total</th>
+            <th>Ganancia</th>
+            <th>Precio venta</th>
+          </tr>
+        </thead>
+
+        <tbody id="tbody-basicas"></tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <!-- PREMIUM -->
+  <div class="section" id="premium">
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Costo total</th>
+            <th>Ganancia</th>
+            <th>Precio venta</th>
+          </tr>
+        </thead>
+
+        <tbody id="tbody-premium"></tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <!-- OTROS -->
+  <div class="section" id="otros">
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Costo total</th>
+            <th>Ganancia</th>
+            <th>Precio venta</th>
+          </tr>
+        </thead>
+
+        <tbody id="tbody-otros"></tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <!-- GORRAS -->
+  <div class="section" id="gorras">
+
+    <div
+      class="cards-grid"
+      id="grid-gorras"
+    ></div>
+
+  </div>
+
+  <!-- ESTRATEGIA -->
+  <div class="section" id="estrategia">
+
+    <div class="estrategia">
+
+      <h3>Guía de estrategia de precios</h3>
+
+      <div class="tips-grid">
+
+        <div class="tip-card">
+          <div class="tip-title">
+            Precio psicológico
+          </div>
+
+          <p>
+            Siempre cierra en 9 o en 0.
+            Ej: $199 o $220.
+            Genera mayor percepción de oferta.
+          </p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-title">
+            Precio por mayoreo
+          </div>
+
+          <p>
+            A partir de 6 piezas,
+            aplica DTF a $50.
+            Mayor volumen mejora tu margen neto.
+          </p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-title">
+            Rango competitivo
+          </div>
+
+          <p>
+            En tianguis y redes,
+            $180-$250 para básica personalizada
+            es altamente competitivo.
+          </p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-title">
+            Contenido orgánico
+          </div>
+
+          <p>
+            Muestra el proceso DTF en TikTok e Instagram.
+            El “cómo se hace” genera curiosidad y venta.
+          </p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-title">
+            Diferenciación
+          </div>
+
+          <p>
+            Por arriba de $300 vende diferenciado:
+            diseño exclusivo, tela premium o edición limitada.
+          </p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-title">
+            Paquetes
+          </div>
+
+          <p>
+            Ofrece packs de 3 o 5 piezas
+            con descuento visible.
+            Aumenta el ticket promedio por cliente.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- LOADER -->
+
+<div id="loader">
+
+  <div class="loader-box">
+
+    <img
+      src="./assets/images/logo.png"
+      alt="UFY"
+    >
+
+    <span>Cargando...</span>
+
+  </div>
+
+</div>
+
+<!-- JS -->
+<script src="./app.js"></script>
+
+</body>
+</html>
