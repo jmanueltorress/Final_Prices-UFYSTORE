@@ -183,7 +183,7 @@ const loader = document.getElementById('loader');
 function showLoader(){
 
   loader.classList.add('show');
-
+//ok
   setTimeout(() => {
     loader.classList.remove('show');
   }, 900);
